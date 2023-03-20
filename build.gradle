@@ -24,6 +24,17 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// junit
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA
+	runtimeOnly 'com.mysql:mysql-connector-j' // MySQL
+
+	// Thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
 }
 
 tasks.named('test') {
