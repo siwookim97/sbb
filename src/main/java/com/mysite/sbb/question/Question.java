@@ -11,9 +11,7 @@ import java.util.Set;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
-@Setter
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,8 +36,21 @@ public class Question {
     @ManyToMany
     private Set<SiteUser> voter;
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setModifyDate(LocalDateTime localDateTime) {
+        this.modifyDate = localDateTime;
+    }
+
+    // 초기에 Builder 패턴으로 엔티티 객체를 생성하고자 하였지만 수정 사항 떄문에 @Setter 추가, 권장하지 않음
     @Builder
-    public Question (String subject, String content, LocalDateTime createDate, SiteUser author) {
+    public Question(String subject, String content, LocalDateTime createDate, SiteUser author) {
         this.subject = subject;
         this.content = content;
         this.createDate = createDate;

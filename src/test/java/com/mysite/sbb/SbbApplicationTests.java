@@ -110,7 +110,6 @@ class SbbApplicationTests {
 		Question q = oq.get();
 
 		Answer a = Answer.builder()
-				.id(1L)
 				.content("네 자동으로 생성됩니다.")
 				.question(q)
 				.createDate(LocalDateTime.now())
